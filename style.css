@@ -1,0 +1,468 @@
+/* =====================
+   Aurora Borealis Theme
+   ===================== */
+:root {
+  --bg: #f2f5f9;
+  --bg-card: #ffffff;
+  --bg-card-alt: #eaeff6;
+  --text: #0c1221;
+  --text-muted: #4e5d73;
+  --border: #d6dde8;
+  --border-subtle: #e8edf4;
+  --accent: #0a8f7c;
+  --accent-hover: #067060;
+  --accent-text: #ffffff;
+  --tag-bg: #d4f4ee;
+  --tag-text: #0a6b5c;
+  --rank-1: #0a8f7c;
+  --rank-2: #3b6fd4;
+  --rank-3: #7c4dcc;
+  --aurora-a: #0a8f7c;
+  --aurora-b: #3b6fd4;
+  --aurora-c: #7c4dcc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #070c14;
+    --bg-card: #0d1422;
+    --bg-card-alt: #111c2e;
+    --text: #dce6f4;
+    --text-muted: #5d7494;
+    --border: #162030;
+    --border-subtle: #111c2e;
+    --accent: #2dd4bf;
+    --accent-hover: #5eead4;
+    --accent-text: #070c14;
+    --tag-bg: #0d2a28;
+    --tag-text: #2dd4bf;
+    --rank-1: #2dd4bf;
+    --rank-2: #60a5fa;
+    --rank-3: #a78bfa;
+    --aurora-a: #2dd4bf;
+    --aurora-b: #60a5fa;
+    --aurora-c: #a78bfa;
+  }
+}
+
+/* =====================
+   Reset & Base
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* =====================
+   Layout
+   ===================== */
+.site-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* =====================
+   Site Header
+   ===================== */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.site-header .site-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.site-logo span {
+  background: linear-gradient(90deg, var(--aurora-a), var(--aurora-b), var(--aurora-c));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =====================
+   Site Footer
+   ===================== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  padding: 2rem 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.site-footer p + p {
+  margin-top: 0.3rem;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+/* =====================
+   Index Page — Post List
+   ===================== */
+.section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.post-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.1s;
+}
+
+.post-card:hover .post-card-title a {
+  color: var(--accent);
+}
+
+.post-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  width: 2rem;
+  text-align: center;
+}
+
+.post-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.post-card-title {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.post-card-title a {
+  color: inherit;
+  transition: color 0.1s;
+}
+
+.post-card-title a:hover {
+  text-decoration: none;
+}
+
+.post-card-meta {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.post-card-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  line-height: 1.5;
+}
+
+.post-card-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Tag pill */
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.45rem;
+  margin-right: 0.35rem;
+  text-transform: uppercase;
+}
+
+/* =====================
+   Top Page — Header
+   ===================== */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.page-header .subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.page-header .updated {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* =====================
+   Top Page — Ranking Cards
+   ===================== */
+.top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.top-card {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.top-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  background: var(--bg-card-alt);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.rank-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+  color: var(--accent-text);
+}
+
+.rank-badge.gold   { background: var(--rank-1); }
+.rank-badge.silver { background: var(--rank-2); }
+.rank-badge.bronze { background: var(--rank-3); }
+.rank-badge:not(.gold):not(.silver):not(.bronze) {
+  background: var(--border);
+  color: var(--text-muted);
+}
+
+.top-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.top-card-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-best    { background: #d4f4ee; color: #0a5c50; }
+.badge-popular { background: #e0e8fb; color: #2a4eaa; }
+.badge-value   { background: #ede9fc; color: #5a30b5; }
+.badge-free    { background: #dff5fe; color: #0c5474; }
+.badge-pro     { background: #fde8f4; color: #862155; }
+
+@media (prefers-color-scheme: dark) {
+  .badge-best    { background: #0b2e28; color: #2dd4bf; }
+  .badge-popular { background: #0f1e3e; color: #60a5fa; }
+  .badge-value   { background: #1c1040; color: #a78bfa; }
+  .badge-free    { background: #082234; color: #38bdf8; }
+  .badge-pro     { background: #2a0a1e; color: #f0abcb; }
+}
+
+.top-card-body {
+  padding: 1rem 1rem;
+}
+
+.top-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pros, .cons {
+  font-size: 0.8rem;
+}
+
+.pros strong, .cons strong {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.pros strong { color: var(--aurora-a); }
+.cons strong { color: #e05c5c; }
+
+.pros ul, .cons ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pros li::before { content: "+ "; color: var(--aurora-a); font-weight: 700; }
+.cons li::before { content: "− "; color: #e05c5c; font-weight: 700; }
+
+.top-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-card-alt);
+}
+
+.price-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.price-label strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--aurora-a), var(--aurora-b));
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* =====================
+   Disclaimer box
+   ===================== */
+.disclaimer {
+  border-left: 3px solid var(--accent);
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  background: var(--bg-card-alt);
+}
+
+/* =====================
+   Responsive — Tablet+
+   ===================== */
+@media (min-width: 600px) {
+  .site-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.9rem;
+  }
+}
