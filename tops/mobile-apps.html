@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Top 5 Productivity Apps for Mobile in 2026 — TopPicks</title>
   <meta name="description" content="The 5 best mobile productivity apps in 2026: Notion, Todoist, Obsidian, Raycast, and Superwhisper — tested for real daily workflows." />
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));</script>
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -12,6 +13,10 @@
   <header class="site-header">
     <div class="site-wrapper">
       <a class="site-logo" href="../index.html">Top<span>Picks</span></a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
     </div>
   </header>
 
@@ -38,24 +43,13 @@
             <p class="top-card-desc">
               Notion has matured into the most flexible personal productivity platform available. Notes, databases, project boards, wikis, and AI writing assistance all in one app. The mobile client is fast and capable — you can do real work from your phone, not just review tasks.
             </p>
-            <div class="pros-cons">
-              <div class="pros">
-                <strong>Pros</strong>
-                <ul>
-                  <li>Extremely flexible structure</li>
-                  <li>Great AI assistant built in</li>
-                  <li>Solid offline support</li>
-                  <li>Generous free tier</li>
-                </ul>
-              </div>
-              <div class="cons">
-                <strong>Cons</strong>
-                <ul>
-                  <li>Can be overwhelming to set up</li>
-                  <li>AI features cost extra</li>
-                  <li>Slow on older phones</li>
-                </ul>
-              </div>
+            <div class="pros">
+              <ul>
+                <li>Extremely flexible structure</li>
+                <li>Great AI assistant built in</li>
+                <li>Solid offline support</li>
+                <li>Generous free tier</li>
+              </ul>
             </div>
           </div>
           <div class="top-card-footer">
@@ -75,24 +69,13 @@
             <p class="top-card-desc">
               If you want to manage tasks and nothing else, Todoist is the benchmark. Natural language input, smart scheduling, recurring tasks, and karma streaks keep you consistent. Polished on every platform, with one of the best widgets on both iOS and Android.
             </p>
-            <div class="pros-cons">
-              <div class="pros">
-                <strong>Pros</strong>
-                <ul>
-                  <li>Best-in-class natural language input</li>
-                  <li>Excellent widgets on iOS & Android</li>
-                  <li>Reliable sync across devices</li>
-                  <li>Clean, distraction-free UI</li>
-                </ul>
-              </div>
-              <div class="cons">
-                <strong>Cons</strong>
-                <ul>
-                  <li>Note-taking is basic</li>
-                  <li>Pro tier needed for reminders</li>
-                  <li>No calendar view on free plan</li>
-                </ul>
-              </div>
+            <div class="pros">
+              <ul>
+                <li>Best-in-class natural language input</li>
+                <li>Excellent widgets on iOS & Android</li>
+                <li>Reliable sync across devices</li>
+                <li>Clean, distraction-free UI</li>
+              </ul>
             </div>
           </div>
           <div class="top-card-footer">
@@ -112,24 +95,13 @@
             <p class="top-card-desc">
               Obsidian stores your notes as plain Markdown files on your device — no vendor lock-in, no proprietary format. Its bidirectional linking and graph view help you build a connected knowledge base over time. The mobile app is fully featured and syncs via iCloud, Dropbox, or Obsidian Sync.
             </p>
-            <div class="pros-cons">
-              <div class="pros">
-                <strong>Pros</strong>
-                <ul>
-                  <li>Plain text files — yours forever</li>
-                  <li>Powerful plugin ecosystem</li>
-                  <li>Works fully offline</li>
-                  <li>Free for personal use</li>
-                </ul>
-              </div>
-              <div class="cons">
-                <strong>Cons</strong>
-                <ul>
-                  <li>Sync costs extra ($4/mo)</li>
-                  <li>Setup takes time and effort</li>
-                  <li>Not beginner-friendly</li>
-                </ul>
-              </div>
+            <div class="pros">
+              <ul>
+                <li>Plain text files — yours forever</li>
+                <li>Powerful plugin ecosystem</li>
+                <li>Works fully offline</li>
+                <li>Free for personal use</li>
+              </ul>
             </div>
           </div>
           <div class="top-card-footer">
@@ -149,24 +121,13 @@
             <p class="top-card-desc">
               Superwhisper runs OpenAI's Whisper model on-device for fast, private, and accurate voice transcription. Dictate notes, compose messages, and draft emails anywhere — it types for you. A genuine productivity multiplier for anyone who thinks faster than they type.
             </p>
-            <div class="pros-cons">
-              <div class="pros">
-                <strong>Pros</strong>
-                <ul>
-                  <li>On-device — fully private</li>
-                  <li>Works offline</li>
-                  <li>Extremely accurate transcription</li>
-                  <li>Types into any app instantly</li>
-                </ul>
-              </div>
-              <div class="cons">
-                <strong>Cons</strong>
-                <ul>
-                  <li>iOS / macOS only</li>
-                  <li>Pro models require subscription</li>
-                  <li>Niche use case</li>
-                </ul>
-              </div>
+            <div class="pros">
+              <ul>
+                <li>On-device — fully private</li>
+                <li>Works offline</li>
+                <li>Extremely accurate transcription</li>
+                <li>Types into any app instantly</li>
+              </ul>
             </div>
           </div>
           <div class="top-card-footer">
@@ -186,24 +147,13 @@
             <p class="top-card-desc">
               Structured is a visual daily planner that puts your tasks on a timeline. Drag tasks into time slots, see your day at a glance, and focus on one thing at a time. Its clean design and Apple Watch complication make it perfect for people who think visually about their schedule.
             </p>
-            <div class="pros-cons">
-              <div class="pros">
-                <strong>Pros</strong>
-                <ul>
-                  <li>Visual timeline-based planning</li>
-                  <li>Beautiful, minimal UI</li>
-                  <li>Apple Watch support</li>
-                  <li>Calendar integration</li>
-                </ul>
-              </div>
-              <div class="cons">
-                <strong>Cons</strong>
-                <ul>
-                  <li>iOS / macOS only</li>
-                  <li>No Android version</li>
-                  <li>Limited project management</li>
-                </ul>
-              </div>
+            <div class="pros">
+              <ul>
+                <li>Visual timeline-based planning</li>
+                <li>Beautiful, minimal UI</li>
+                <li>Apple Watch support</li>
+                <li>Calendar integration</li>
+              </ul>
             </div>
           </div>
           <div class="top-card-footer">
@@ -232,6 +182,7 @@
     </div>
   </footer>
 
+  <script>document.getElementById('theme-toggle').addEventListener('click',function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('theme',n);});</script>
   <script src="../db/alltops.js"></script>
   <script>
   (function () {

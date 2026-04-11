@@ -23,7 +23,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not([data-theme="light"]) {
     --bg: #070c14;
     --bg-card: #0d1422;
     --bg-card-alt: #111c2e;
@@ -43,6 +43,27 @@
     --aurora-b: #60a5fa;
     --aurora-c: #a78bfa;
   }
+}
+
+html[data-theme="dark"] {
+  --bg: #070c14;
+  --bg-card: #0d1422;
+  --bg-card-alt: #111c2e;
+  --text: #dce6f4;
+  --text-muted: #5d7494;
+  --border: #162030;
+  --border-subtle: #111c2e;
+  --accent: #2dd4bf;
+  --accent-hover: #5eead4;
+  --accent-text: #070c14;
+  --tag-bg: #0d2a28;
+  --tag-text: #2dd4bf;
+  --rank-1: #2dd4bf;
+  --rank-2: #60a5fa;
+  --rank-3: #a78bfa;
+  --aurora-a: #2dd4bf;
+  --aurora-b: #60a5fa;
+  --aurora-c: #a78bfa;
 }
 
 /* =====================
@@ -98,6 +119,7 @@ a:hover {
 .site-header .site-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .site-logo {
@@ -283,23 +305,24 @@ a:hover {
 .top-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
   margin-bottom: 2.5rem;
-  border-top: 1px solid var(--border);
 }
 
 .top-card {
-  background: var(--bg-card);
-  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.top-card:first-child {
+  border-top: 1px solid var(--border-subtle);
 }
 
 .top-card-header {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 0.9rem 1rem;
-  background: var(--bg-card-alt);
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 0;
+  margin-bottom: 1rem;
 }
 
 .rank-badge {
@@ -345,56 +368,43 @@ a:hover {
 .badge-pro     { background: #fde8f4; color: #862155; }
 
 @media (prefers-color-scheme: dark) {
-  .badge-best    { background: #0b2e28; color: #2dd4bf; }
-  .badge-popular { background: #0f1e3e; color: #60a5fa; }
-  .badge-value   { background: #1c1040; color: #a78bfa; }
-  .badge-free    { background: #082234; color: #38bdf8; }
-  .badge-pro     { background: #2a0a1e; color: #f0abcb; }
+  html:not([data-theme="light"]) .badge-best    { background: #0b2e28; color: #2dd4bf; }
+  html:not([data-theme="light"]) .badge-popular { background: #0f1e3e; color: #60a5fa; }
+  html:not([data-theme="light"]) .badge-value   { background: #1c1040; color: #a78bfa; }
+  html:not([data-theme="light"]) .badge-free    { background: #082234; color: #38bdf8; }
+  html:not([data-theme="light"]) .badge-pro     { background: #2a0a1e; color: #f0abcb; }
 }
 
+html[data-theme="dark"] .badge-best    { background: #0b2e28; color: #2dd4bf; }
+html[data-theme="dark"] .badge-popular { background: #0f1e3e; color: #60a5fa; }
+html[data-theme="dark"] .badge-value   { background: #1c1040; color: #a78bfa; }
+html[data-theme="dark"] .badge-free    { background: #082234; color: #38bdf8; }
+html[data-theme="dark"] .badge-pro     { background: #2a0a1e; color: #f0abcb; }
+
 .top-card-body {
-  padding: 1rem 1rem;
+  padding: 0;
 }
 
 .top-card-desc {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  font-size: 0.925rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
 }
 
-.pros-cons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.pros, .cons {
+.pros {
   font-size: 0.8rem;
+  margin-bottom: 1.25rem;
 }
 
-.pros strong, .cons strong {
-  display: block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.35rem;
-}
-
-.pros strong { color: var(--aurora-a); }
-.cons strong { color: #e05c5c; }
-
-.pros ul, .cons ul {
+.pros ul {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
 }
 
 .pros li::before { content: "+ "; color: var(--aurora-a); font-weight: 700; }
-.cons li::before { content: "− "; color: #e05c5c; font-weight: 700; }
 
 .top-card-footer {
   display: flex;
@@ -402,9 +412,8 @@ a:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.75rem;
-  padding: 0.8rem 1rem;
+  padding: 1.25rem 0 0;
   border-top: 1px solid var(--border-subtle);
-  background: var(--bg-card-alt);
 }
 
 .price-label {
@@ -453,6 +462,34 @@ a:hover {
   margin-bottom: 2rem;
   background: var(--bg-card-alt);
 }
+
+/* =====================
+   Theme Toggle Button
+   ===================== */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+/* Light mode: show moon (click → go dark) */
+html[data-theme="light"] .theme-toggle .icon-sun  { display: none; }
+html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+/* Dark mode: show sun (click → go light) */
+html[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* =====================
    Suggested Tops (Footer)
