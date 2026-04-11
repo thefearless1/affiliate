@@ -455,6 +455,52 @@ a:hover {
 }
 
 /* =====================
+   Suggested Tops (Footer)
+   ===================== */
+.more-tops {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.more-tops-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.more-tops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.more-tops-item a {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+  transition: color 0.1s;
+}
+
+.more-tops-item a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.more-tops-item p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* =====================
    Responsive — Tablet+
    ===================== */
 @media (min-width: 600px) {

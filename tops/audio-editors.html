@@ -223,10 +223,34 @@
 
   <footer class="site-footer">
     <div class="site-wrapper">
+      <div class="more-tops" id="more-tops" data-current="audio-editors.html">
+        <p class="more-tops-title">More from TopPicks</p>
+        <div class="more-tops-list" id="more-tops-list"></div>
+      </div>
       <p>&copy; 2026 TopPicks. All rights reserved.</p>
       <p>Some links are affiliate links. <a href="#">Privacy Policy</a> · <a href="#">Disclosure</a></p>
     </div>
   </footer>
+
+  <script src="../db/alltops.js"></script>
+  <script>
+  (function () {
+    var container = document.getElementById('more-tops');
+    var list = document.getElementById('more-tops-list');
+    var current = container.getAttribute('data-current');
+    var others = allTops.filter(function (t) { return t.url !== current; });
+    for (var i = others.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = others[i]; others[i] = others[j]; others[j] = tmp;
+    }
+    others.slice(0, 3).forEach(function (top) {
+      var item = document.createElement('div');
+      item.className = 'more-tops-item';
+      item.innerHTML = '<a href="' + top.url + '">' + top.title + '</a><p>' + top.description + '</p>';
+      list.appendChild(item);
+    });
+  })();
+  </script>
 
 </body>
 </html>

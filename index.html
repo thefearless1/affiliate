@@ -21,58 +21,36 @@
       <!-- Latest Posts -->
       <section id="categories">
         <p class="section-title">Latest Lists</p>
-        <div class="post-list">
-
-          <article class="post-card">
-            <div class="post-card-icon">🖼️</div>
-            <div class="post-card-body">
-              <div class="post-card-meta">
-                <span class="tag">Photo</span>
-                April 10, 2026
-              </div>
-              <h2 class="post-card-title">
-                <a href="tops/photo-editors.html">Top 5 Photo Editors in 2026</a>
-              </h2>
-              <p class="post-card-excerpt">From professional RAW processing to quick mobile touch-ups — these are the best photo editors tested across platforms.</p>
-            </div>
-            <div class="post-card-arrow">›</div>
-          </article>
-
-          <article class="post-card">
-            <div class="post-card-icon">🎧</div>
-            <div class="post-card-body">
-              <div class="post-card-meta">
-                <span class="tag">Audio</span>
-                April 8, 2026
-              </div>
-              <h2 class="post-card-title">
-                <a href="tops/audio-editors.html">Top 5 Audio Editors in 2026</a>
-              </h2>
-              <p class="post-card-excerpt">Whether you're podcasting, mixing music, or cleaning up recordings — here are the audio editors worth your time.</p>
-            </div>
-            <div class="post-card-arrow">›</div>
-          </article>
-
-          <article class="post-card">
-            <div class="post-card-icon">📱</div>
-            <div class="post-card-body">
-              <div class="post-card-meta">
-                <span class="tag">Mobile</span>
-                April 5, 2026
-              </div>
-              <h2 class="post-card-title">
-                <a href="tops/mobile-apps.html">Top 5 Productivity Apps for Mobile in 2026</a>
-              </h2>
-              <p class="post-card-excerpt">The mobile apps that genuinely improve your workflow — ranked by daily usability, not just feature count.</p>
-            </div>
-            <div class="post-card-arrow">›</div>
-          </article>
-
-        </div>
+        <div class="post-list" id="post-list"></div>
       </section>
 
-</div>
+    </div>
   </main>
+
+  <script src="db/alltops.js"></script>
+  <script>
+  (function () {
+    var list = document.getElementById('post-list');
+    var sorted = allTops.slice().sort(function (a, b) {
+      return b.date.localeCompare(a.date);
+    });
+    sorted.forEach(function (top) {
+      var date = new Date(top.date + 'T00:00:00');
+      var dateDisplay = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      var article = document.createElement('article');
+      article.className = 'post-card';
+      article.innerHTML =
+        '<div class="post-card-icon">' + top.icon + '</div>' +
+        '<div class="post-card-body">' +
+          '<div class="post-card-meta"><span class="tag">' + top.tag + '</span> ' + dateDisplay + '</div>' +
+          '<h2 class="post-card-title"><a href="tops/' + top.url + '">' + top.title + '</a></h2>' +
+          '<p class="post-card-excerpt">' + top.excerpt + '</p>' +
+        '</div>' +
+        '<div class="post-card-arrow">›</div>';
+      list.appendChild(article);
+    });
+  })();
+  </script>
 
   <footer class="site-footer">
     <div class="site-wrapper">
