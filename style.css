@@ -8,7 +8,7 @@
   --text: #0c1221;
   --text-muted: #4e5d73;
   --border: #d6dde8;
-  --border-subtle: #e8edf4;
+  --border-subtle: #a8bace;
   --accent: #0a8f7c;
   --accent-hover: #067060;
   --accent-text: #ffffff;
@@ -30,7 +30,7 @@
     --text: #dce6f4;
     --text-muted: #5d7494;
     --border: #162030;
-    --border-subtle: #111c2e;
+    --border-subtle: #4a7099;
     --accent: #2dd4bf;
     --accent-hover: #5eead4;
     --accent-text: #070c14;
@@ -318,13 +318,10 @@ a:hover {
 }
 
 .top-card {
-  padding: 2rem 0;
+  padding: 2rem 0 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.top-card:first-child {
-  border-top: 1px solid var(--border-subtle);
-}
 
 .top-card-header {
   display: flex;
@@ -420,8 +417,8 @@ html[data-theme="dark"] .badge-pro     { background: #2a0a1e; color: #f0abcb; }
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 1.25rem 0 0;
+  gap: 0.5rem;
+  padding: 0.65rem 0;
   border-top: 1px solid var(--border-subtle);
 }
 
